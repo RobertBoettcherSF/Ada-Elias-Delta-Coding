@@ -2,9 +2,9 @@
 package body Elias_Delta is
 
    function Integer_To_Binary (N : Positive) return String is
-      Temp  : Positive := N;
+      Temp   : Natural := N; -- FIXED: Changed from Positive to Natural to allow 0 during division
       Result : String (1 .. 64);
-      Index : Integer := 64;
+      Index  : Integer := 64;
    begin
       if N = 1 then
          return "1";
